@@ -25,33 +25,41 @@ import Mussels from "~/assets/images/mussels2.png";
 <Layout title="Home" pageTitle="Home" description="Welcome to our restaurant!">
 	<Section class:list={"bg-white"}>
 		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge title="il ristorante italiana" />
-				<h1 class="font-black">Real Italian food in a real Italian restaurant...</h1>
-
+			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1 mt-0">
+				<Badge title="Traiteur Italien" color="red" style="background-color: #d12928; color: white;" />
+	 	 	 	 <h1 class="font-black text-lg">Le goût de l’Italie à Pornichet</h1>
 				<p>
-					Experience the taste of Italy with our authentic dishes made from the finest ingredients. Indulge in
-					our wide variety of pizzas, pastas, and desserts, all crafted with love and tradition. Whether
-					you're dining in or taking out, we promise a memorable culinary experience.
-				</p>
-
-				<span class="text-brand-green font-medium">✔ We also deliver</span>
+                   Carpa Bella est une adresse italienne incontournable à Pornichet.
+Nous proposons des produits de qualité, travaillés avec des fournisseurs de confiance depuis nos débuts.
+Authenticité, proximité et passion : l’Italie s’invite à votre table. 🇮🇹
 
 				<div class="mt-8 flex items-center gap-x-8">
-					<Button url="/book">Book now</Button>
+					<Button url="/book" style="background-color: #d12928; color: white;">Nous contacter</Button>
 					<ButtonCallUs />
 				</div>
 			</div>
 			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-					loading={"eager"}
-					fetchpriority={"high"}
-				/>
+				<div 
+					x-data="{ active: 0, images: [
+						'/src/assets/images/gallery/photo1.webp',
+						'/src/assets/images/gallery/photo2.jpg',
+						'/src/assets/images/gallery/photo3.jpg'
+					] }"
+					x-init="setInterval(() => { active = (active + 1) % images.length }, 2500)"
+					class="relative w-full max-w-xl mx-auto"
+				>
+					<img :src="images[active]" class="w-full h-[24rem] object-cover rounded-lg shadow transition-all duration-700 ease-in-out" alt="Galerie" />
+					<div class="flex justify-center gap-2 mt-2">
+						<template x-for="(img, i) in images" :key="i">
+							<button
+								:class="{'bg-brand-red': active === i, 'bg-gray-300': active !== i}"
+								class="w-3 h-3 rounded-full"
+								@click="active = i"
+								aria-label="Voir la photo"
+							></button>
+						</template>
+					</div>
+				</div>
 			</div>
 		</Hero>
 	</Section>
@@ -60,9 +68,9 @@ import Mussels from "~/assets/images/mussels2.png";
 
 	<Section class:list={"bg-white"}>
 		<Heading>
-			<h2 slot="heading-title" class="font-black text-brand-green h2">Our dishes</h2>
+			<h2 slot="heading-title" class="font-black h2" style="color: #d12928;">Nos spécialités</h2>
 			<p slot="heading-content">
-				Explore our selection of authentic Italian dishes, from classic pizzas to homemade pastas.
+				À la découverte des spécialités italiennes qui font voyager vos papilles.
 			</p>
 		</Heading>
 
@@ -75,10 +83,9 @@ import Mussels from "~/assets/images/mussels2.png";
 						formats={["avif", "webp"]}
 						alt="A description of my image."
 					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
+					<h3 class="h4 mt-0 font-black">Pizza</h3>
 					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
+					Nos pizzas sont faites avec une pâte fine et légère, garnies de produits frais. Des recettes classiques aux créations originales, il y en a pour tous les goûts.
 					</p>
 				</div>
 			</div>
@@ -91,10 +98,10 @@ import Mussels from "~/assets/images/mussels2.png";
 						formats={["avif", "webp"]}
 						alt="A description of my image."
 					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
+					<h3 class="h4 mt-0 font-black">Arancini</h3>
 					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
+						Nos arancini dorés et croustillants renferment un cœur fondant et savoureux. 
+						Une spécialité italienne gourmande qui se déguste à chaque bouchée.
 					</p>
 				</div>
 			</div>
@@ -291,7 +298,7 @@ import Mussels from "~/assets/images/mussels2.png";
 						restaurant is the perfect place to enjoy a delicious meal with friends and family.
 					</p>
 
-					<span class="text-brand-red font-medium">
+					<span class="text-[#d12928] font-medium">
 						✔ We also do take-away, so you can enjoy your food at home
 					</span>
 
@@ -302,14 +309,16 @@ import Mussels from "~/assets/images/mussels2.png";
 			</div>
 
 			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={Dessert}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-				/>
-			</div>
-		</Hero>
-	</Section>
-</Layout>
+				<!-- Slider automatique d'images -->
+				<div 
+					x-data="{ active: 0, images: [
+						'/src/assets/images/gallery/photo1.webp',
+						'/src/assets/images/gallery/photo2.jpg',
+						'/src/assets/images/gallery/photo3.jpg'
+					] }"
+					x-init="setInterval(() => { active = (active + 1) % images.length }, 2500)"
+					class="relative w-full max-w-xs mx-auto"
+				>
+					<img :src="images[active]" class="w-full h-48 object-cover rounded-lg shadow transition-all duration-700 ease-in-out" alt="Galerie" />
+					<div class="flex justify-center gap-2 mt-2">
+						<template x-for="(img, i) in images" :key="i">

@@ -1,34 +1,24 @@
 export const menuMain = [
     {
-        name: "Home",
+        name: "Accueil",
         url: "/",
         highlighted: false,
     },
     {
-        name: "Menu",
+        name: "Carte",
         url: "/menu",
         highlighted: false,
     },
     {
-        name: "About Us",
+        name: "À Propos",
         url: "/about-us",
         highlighted: false,
     },
     {
-        name: "Gallery",
-        url: "/gallery",
-        highlighted: false,
-    },
-    {
-        name: "Contact",
+        name: "Nous Contacter",
         url: "/contact",
         highlighted: false,
-    },
-    {
-        name: "Book",
-        url: "/book",
-        highlighted: true,
-    },
+    }
 ];
 
 export const footerPrimary = [

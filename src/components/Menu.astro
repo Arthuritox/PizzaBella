@@ -7,7 +7,7 @@ const siteLangFormat = siteLang.replace("_", "-");
 
 <!-- Quick Nav -->
 <div id="plate-nav-wrapper" class="mb-20 sticky top-8 z-10">
-	<nav class="bg-brand-green text-white sm:rounded-full max-w-5xl mx-auto">
+	<nav class="bg-[#d12928] text-white sm:rounded-full max-w-5xl mx-auto">
 		<div class="swiper-plates w-auto overflow-hidden">
 			<ul id="plate-nav" class="px-2.5 py-3 swiper-wrapper">
 				{
@@ -15,7 +15,7 @@ const siteLangFormat = siteLang.replace("_", "-");
 						<li class="swiper-slide !w-auto last:mr-5">
 							<a
 								href={`#${plate.data.slug}`}
-								class="rounded-full px-2 py-1 transition font-medium select-none"
+								class="rounded-full px-2 py-1 transition font-medium select-none text-white"
 								data-category-link={plate.data.slug}
 							>
 								{plate.data.prettyName}
@@ -105,21 +105,18 @@ const siteLangFormat = siteLang.replace("_", "-");
 		});
 
 		// Function to set active category
-		function setActiveCategory(id: string) {
-			// Remove active classes and restore hover effect to all links
+		function setActiveCategory(id) {
 			categoryLinks.forEach((link) => {
-				link.classList.remove("bg-white", "text-brand-green");
-				link.classList.add("hover:bg-white/10");
+				link.classList.remove("bg-white", "text-[#008c45]");
+				link.classList.add("hover:bg-white/10", "text-white");
 			});
 
-			// Add active classes to current link and remove hover effect
 			const currentLink = document.querySelector(`[data-category-link="${id}"]`);
 			if (currentLink) {
-				currentLink.classList.add("bg-white", "text-brand-green");
-				currentLink.classList.remove("hover:bg-white/10");
+				currentLink.classList.add("bg-white", "text-[#008c45]");
+				currentLink.classList.remove("hover:bg-white/10", "text-white");
 				activeLink = currentLink;
 
-				// Slide to make the active link visible if needed
 				const linkIndex = Array.from(categoryLinks).indexOf(currentLink);
 				if (linkIndex !== -1) {
 					swiper.slideTo(linkIndex);
@@ -181,6 +178,9 @@ const siteLangFormat = siteLang.replace("_", "-");
 		};
 
 		// Set initial active category
+		setInitialActiveCategory();
+	});
+</script>
 		setInitialActiveCategory();
 	});
 </script>

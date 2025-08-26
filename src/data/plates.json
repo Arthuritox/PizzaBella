@@ -1,34 +1,95 @@
 [
 	{
 		"id": 1,
-		"slug": "antipasti",
-		"prettyName": "Antipasti",
-		"description": "Start your meal with one of our delicious appetizers.",
+		"slug": "pizza",
+		"prettyName": "Pizza",
+		"color": "#d12928",
+		"description": "Fine, gourmande, authentique.",
 		"plates": [
 			{
-				"name": "Bruschetta",
-				"description": "Grilled bread topped with fresh tomatoes, garlic, basil, and olive oil.",
-				"price": 6.5
+				"name": "La Classico",
+				"description": "Sauce tomate, mozzarella, jambon, emmental, origan",
+				"price": 10.8
 			},
 			{
-				"name": "Caprese",
-				"description": "Slices of mozzarella, tomatoes, and basil drizzled with balsamic glaze.",
-				"price": 8.5
+				"name": "La Vivaldi",
+				"description": "Sauce tomate, mozzarella, champignons, jambon, emmental, origan",
+				"price": 11.5
 			},
 			{
-				"name": "Arancini",
-				"description": "Crispy risotto balls filled with cheese and served with marinara sauce.",
-				"price": 7.5
+				"name": "La Montana",
+				"description": "Sauce tomate, jambon de Parme, pommes de terre, fromage à raclette, emmental, origan",
+				"price": 14.3
 			},
 			{
-				"name": "Prosciutto e Melone",
-				"description": "Cured ham paired with sweet cantaloupe.",
-				"price": 9
+				"name": "La Mabrina",
+				"description": "Olives taggiasche, mozzarella, jambon de Parme, emmental, origan",
+				"price": 14.3
 			},
 			{
-				"name": "Antipasto Platter",
-				"description": "A selection of cured meats, cheeses, and marinated vegetables.",
-				"price": 12
+				"name": "L’Italienne",
+				"description": "Sauce tomate, mozzarella burrata, tomates cerises, jambon de Parme, pesto basilic, emmental",
+				"price": 14.5
+			},
+			{
+				"name": "La Française",
+				"description": "Sauce tomate, lardons fumés, champignons, chèvre, emmental, origan",
+				"price": 14.3
+			},
+			{
+				"name": "La Tartifla",
+				"description": "Fromage frais, pommes de terre, reblochon, oignons confits, speck, emmental, origan",
+				"price": 14.5
+			},
+			{
+				"name": "La Roma",
+				"description": "Sauce tomate, viande hachée, poivrons, mozzarella, emmental, origan",
+				"price": 14.3
+			},
+			{
+				"name": "La De Vinci",
+				"description": "Sauce tomate, mozzarella, spinata, poivrons, emmental, origan",
+				"price": 14.3
+			},
+			{
+				"name": "La Catane",
+				"description": "Sauce tomate, filet de poulet, chèvre, poivrons, emmental, origan",
+				"price": 14.3
+			},
+			{
+				"name": "La Belluci 🌱",
+				"description": "Sauce tomate, artichauts, courgettes, aubergines, poivrons, emmental, origan",
+				"price": 13.5
+			},
+			{
+				"name": "La Galileo 🌱",
+				"description": "Sauce tomate, mozzarella, chèvre, gorgonzola, emmental, origan",
+				"price": 13.9
+			},
+			{
+				"name": "La Burattina 🌱",
+				"description": "Sauce tomate, mozzarella burrata, tomates cerises, pesto basilic, emmental",
+				"price": 13.9
+			},
+			{
+				"name": "La Capria 🌱",
+				"description": "Sauce tomate, chèvre, mozzarella, miel, emmental, origan",
+				"price": 13.9
+			},
+			{
+				"name": "La Tartufo 🌱",
+				"description": "Fromage frais, crème de truffe, mozzarella râpée, champignons, huile de truffe",
+				"price": 15.5
+			},
+			{
+				"name": "La Marco Polo",
+				"description": "Fromage frais, saumon fumé, pommes de terre, tomates cerises, emmental, origan",
+				"price": 14.9
+			},
+			{
+				"name": "La Napolitaine 🌱",
+				"description": "Sauce tomate, anchois, olives taggiasche, oignons confits, emmental, origan",
+				"price": 13.9
 			}
 		]
 	},

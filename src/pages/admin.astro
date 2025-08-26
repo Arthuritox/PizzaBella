@@ -1,0 +1,24 @@
+---
+import plates from "~/data/plates.json";
+---
+
+<h1>Interface Admin - Gestion des produits</h1>
+<ul>
+	{plates.map((cat) => (
+		<li>
+			<h2>{cat.prettyName}</h2>
+			<ul>
+				{cat.plates.map((item, idx) => (
+					<li>
+						<form>
+							<input type="text" value={item.name} />
+							<input type="text" value={item.description} />
+							<input type="number" value={item.price} step="0.01" />
+							<button type="submit">Modifier</button>
+						</form>
+					</li>
+				))}
+			</ul>
+		</li>
+	))}
+</ul>

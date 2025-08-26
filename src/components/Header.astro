@@ -11,10 +11,14 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 ---
 
 <header x-data="{ open: false }" @keydown.window.escape="open = false">
-	<div class="container py-6">
+	<div class="container py-0 m-0">
 		<nav class="flex items-center justify-between" aria-label="Global">
-			<a href="/" class="-m-1.5 p-1.5">
-				<p class="font-bold text-4xl text-brand-green">Astro<span class="text-brand-red bg-brand-red/5 px-3 ml-1 rounded-lg">Pie</span></p>
+			<a href="/" class="-m-1.5 p-0 group" style="margin-top: 12px;">
+				<img
+					src="/src/assets/images/gallery/logo.png"
+					alt="Logo Carpa Bella"
+					class="h-32 w-auto transition-transform duration-300 group-hover:animate-bounce-custom m-0"
+				/>
 			</a>
 			<div class="flex lg:hidden">
 				<button
@@ -39,12 +43,12 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 					</svg>
 				</button>
 			</div>
-			<div class="hidden lg:flex lg:gap-x-12 lg:items-center">
+			<div class="hidden lg:flex lg:gap-x-[40px] lg:items-center">
 				{
 					menuMain.map((item) => (
 						<a
 							href={item.url}
-							class={`transition text-base/6 font-semibold hover:text-brand-green ${item.highlighted ? "menu-item-highlighted" : ""} ${pathname === item.url ? "menu-item-active" : ""}`}
+							class={`transition text-base/6 font-semibold hover:text-[#d12928] ${item.highlighted ? "menu-item-highlighted" : ""} ${pathname === item.url ? "font-extrabold text-[#d12928]" : ""}`}
 						>
 							{item.name}
 						</a>
@@ -66,7 +70,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 			>
 				<div class="flex items-center justify-between">
 					<a href="/" class="-m-1.5 p-1.5">
-						<p class="font-bold text-4xl text-brand-green">Astro<span class="text-brand-red">Pie</span></p>
+						<img src="/src/assets/images/gallery/logo.png" alt="Logo Carpa Bella" class="h-32 w-auto" />
 					</a>
 					<button type="button" class="-m-2.5 p-2.5 text-brand-red" @click="open = false">
 						<span class="sr-only">Close menu</span>
@@ -104,3 +108,16 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 		</div>
 	</div>
 </header>
+
+<style>
+@keyframes bounce-custom {
+	0%, 100% { transform: translateY(0);}
+	20% { transform: translateY(-20px);}
+	40% { transform: translateY(0);}
+	60% { transform: translateY(-10px);}
+	80% { transform: translateY(0);}
+}
+.group-hover\:animate-bounce-custom:hover {
+	animation: bounce-custom 0.7s;
+}
+</style>

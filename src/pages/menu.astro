@@ -8,12 +8,18 @@ import MenuList from "~/components/Menu.astro";
 <Layout>
 	<Section>
 		<Heading>
-			<h1 slot="heading-title" class="font-black text-brand-green h2">Our menu</h1>
+			<h1 slot="heading-title" class="font-black h2" style="color: #d12928;">Notre carte</h1>
 			<p slot="heading-content">
-				We offer a variety of dishes, from traditional to modern, that are sure to satisfy your cravings.
+				Nous proposons une variété de plats, des recettes traditionnelles aux créations modernes, qui sauront satisfaire toutes vos envies.
 			</p>
 		</Heading>
 
+		<div class="mt-2 flex items-center justify-center">
+			<div class="bg-gray-100 rounded px-3 py-1 text-sm text-gray-600 border border-gray-200">
+				<span class="font-semibold">Légende :</span> <span>🌱 : Produit végétarien</span>
+			</div>
+		</div>
+		<br />
 		<MenuList />
 	</Section>
 </Layout>
